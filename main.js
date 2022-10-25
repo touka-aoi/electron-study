@@ -2,6 +2,7 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const { PythonShell } = require('python-shell');
 const path = require('path');
+const { type } = require('os');
 
 let filePaths = {};
 
@@ -34,11 +35,29 @@ const createWindow = () => {
 
     ipcMain.handle("fileSend", async (_e, _arg) => {
       // pythonにファイル名を送信
-      
+      return ["hoge", "fuga", "nua"]
       
       // pythonからグラフが返ってくる
 
     });
+
+    ipcMain.handle("python-graph", async (_e, _arg) => {
+      const json = '{"result":true, "count":42}';
+      const obj = JSON.parse(json);
+      let options = {
+        mode: 'json',
+        args: obj
+      };
+      PythonShell.run("./graphCreator.py", options, (err, res) => {
+        console.log("----err---")
+        console.log(err);
+        console.log("----res---")
+        console.log(res);
+      })
+      return "hoge"
+    });
+
+    
 
     mainWindow.loadFile('index.html')
   }

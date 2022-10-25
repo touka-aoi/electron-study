@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
@@ -11,6 +12,10 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-api-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.js"></script>
     <title>Hello from Electron renderer!</title>
   </head>
   <body>
@@ -20,6 +25,8 @@
     <div id = "referenceText"> 
     </div>
     <button id="csvSendButton">CSV読み込み</button>
+    <div id="fileList"></div>
+    <button id="createGraphButton">グラフ作成</button>
     <script src="./renderer.js"></script>
   </body>
 </html>
