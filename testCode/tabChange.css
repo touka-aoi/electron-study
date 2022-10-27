@@ -1,0 +1,108 @@
+.area {
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
+   
+  .tab_class {
+    width: 200px;
+    height: 50px;
+    background-color: darkgrey;
+    line-height: 50px;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    float: left;
+    order: -1;
+  }
+   
+  input[name="tab_name"] {
+    display: none;
+  }
+   
+  input:checked + .tab_class {
+    background-color: cadetblue;
+    color: aliceblue;
+  }
+   
+  .content_class {
+    display: none;
+    height: 50px;
+  }
+   
+  input:checked + .tab_class + .content_class {
+    display: flex;
+  }
+
+  .master {
+    display: flex;
+  }
+
+/* input {
+    display: none;
+}
+
+.area {
+width: 200px;
+background-color: aquamarine;
+display: flex;
+flex-direction: column;
+}
+   
+.master{
+    display: flex;
+}
+
+.content_class{
+    display: none;
+}
+
+/* 選択したものが変わる */
+/* input:checked + .tab_class{
+    background-color: brown;
+    color: aliceblue;
+}
+
+.display_on {
+    display: flex;
+    margin-top: 0px;
+}
+
+p {
+    margin-top: 0px;
+}
+ */
+
+/*
+  .tab_class {
+    width: calc(100%/5);
+    height: 50px;
+    background-color: darkgrey;
+    line-height: 50px;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    float: left;
+    order: -1;
+  }
+   
+  input[name="tab_name"] {
+    display: none;
+  }
+   
+  input:checked + .tab_class {
+    background-color: cadetblue;
+    color: aliceblue;
+  }
+   
+  .content_class {
+    display: none;
+    width: 100%;
+  }
+   
+  input:checked + .tab_class + .content_class {
+    display: block;
+  }
+    */ */
